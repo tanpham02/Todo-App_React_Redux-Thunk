@@ -58,7 +58,11 @@ export default function Filters() {
     <Row justify='center'>
       <Col span={24}>
         <Typography.Paragraph
-          style={{ fontWeight: 'bold', marginBottom: 3, marginTop: 10 }}
+          style={{
+            fontWeight: 'bold',
+            marginBottom: 3,
+            marginTop: 10
+          }}
         >
           Search
         </Typography.Paragraph>
@@ -70,7 +74,11 @@ export default function Filters() {
       </Col>
       <Col sm={24}>
         <Typography.Paragraph
-          style={{ fontWeight: 'bold', marginBottom: 3, marginTop: 10 }}
+          style={{
+            fontWeight: 'bold',
+            marginBottom: 3,
+            marginTop: 10
+          }}
         >
           Filter By Status
         </Typography.Paragraph>
@@ -82,7 +90,11 @@ export default function Filters() {
       </Col>
       <Col sm={24}>
         <Typography.Paragraph
-          style={{ fontWeight: 'bold', marginBottom: 3, marginTop: 10 }}
+          style={{
+            fontWeight: 'bold',
+            marginBottom: 3,
+            marginTop: 10
+          }}
         >
           Filter By Priority
         </Typography.Paragraph>
