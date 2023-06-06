@@ -82,7 +82,10 @@ export default function Filters() {
         >
           Filter By Status
         </Typography.Paragraph>
-        <Radio.Group value={filters.status} onChange={handleChangeStatus} >
+        <Radio.Group
+          value={filters.status}
+          onChange={handleChangeStatus}
+        >
           <Radio value='All'>All</Radio>
           <Radio value='Completed'>Completed</Radio>
           <Radio value='Todo'>To do</Radio>
