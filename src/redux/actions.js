@@ -7,8 +7,6 @@ const FILTERBYPRIORITIES = 'filterByPriorities'
 
 
 
-
-
 const getAllTodos = todos => {
     return {
         type: GETALLTODOS,
@@ -51,8 +49,6 @@ const filterByPriorities = priorities => {
         payload: priorities
     }
 }
-
-
 
 
 export {

@@ -1,4 +1,8 @@
-import { Row, Tag, Checkbox } from 'antd'
+import {
+  Row,
+  Tag,
+  Checkbox
+} from 'antd'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { toggleTodoThunk } from '../TodoList/todoListsSlice'
