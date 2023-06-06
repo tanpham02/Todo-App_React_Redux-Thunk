@@ -9,7 +9,12 @@ const priorityColorMapping = {
   Low: 'gray',
 }
 
-export default function Todo({ name, priority, completed, id }) {
+export default function Todo({
+  name,
+  priority,
+  completed,
+  id
+}) {
   const [checked, setChecked] = useState(completed)
   const dispatch = useDispatch()
 
