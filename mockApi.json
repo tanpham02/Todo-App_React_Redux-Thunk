@@ -1,28 +1,22 @@
 {
   "todoLists": [
     {
-      "name": "Learn Javascript",
       "priority": "Medium",
-      "completed": false,
-      "id": 1
+      "completed": true,
+      "id": 1,
+      "name": "Learn Javascript"
     },
     {
       "name": "Learn React",
       "priority": "High",
-      "completed": true,
+      "completed": false,
       "id": 2
     },
     {
-      "id": 3,
-      "name": "Learn Redux",
       "priority": "Low",
-      "completed": false
-    },
-    {
-      "name": "Learn English",
-      "completed": true,
-      "priority": "High",
-      "id": 4
+      "completed": false,
+      "id": 3,
+      "name": "Learn Redux"
     }
   ]
 }

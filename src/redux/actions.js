@@ -1,9 +1,12 @@
 const GETALLTODOS = 'getAllTodos'
 const ADDTODO = 'addTodo'
 const TOGGLETODO = 'toggleTodo'
+const EDITTODO = 'editTodo'
+const DELETETODO = 'deleteTodo'
 const FILTERBYSEARCH = 'filterBySearch'
 const FILTERBYSTATUS = 'filterByStatus'
 const FILTERBYPRIORITIES = 'filterByPriorities'
+
 
 
 
@@ -24,6 +27,20 @@ const addTodo = newTodo => {
 const toggleTodo = id => {
     return {
         type: TOGGLETODO,
+        payload: id
+    }
+}
+
+const editTodo = todoUpdate => {
+    return {
+        type: EDITTODO,
+        payload: todoUpdate
+    }
+}
+
+const deleteTodo = id => {
+    return {
+        type: DELETETODO,
         payload: id
     }
 }
@@ -55,12 +72,16 @@ export {
     GETALLTODOS,
     ADDTODO,
     TOGGLETODO,
+    EDITTODO,
+    DELETETODO,
     FILTERBYSEARCH,
     FILTERBYSTATUS,
     FILTERBYPRIORITIES,
     getAllTodos,
     addTodo,
     toggleTodo,
+    editTodo,
+    deleteTodo,
     filterBySearch,
     filterByStatus,
     filterByPriorities

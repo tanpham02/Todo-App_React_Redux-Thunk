@@ -3,9 +3,13 @@ import {
     GETALLTODOS,
     ADDTODO,
     TOGGLETODO,
+    EDITTODO,
     getAllTodos,
     addTodo,
     toggleTodo,
+    editTodo,
+    deleteTodo,
+    DELETETODO,
 } from "../../redux/actions"
 
 const initialState = {
@@ -34,6 +38,24 @@ const todoListsSlice = (state = initialState, action) => {
             return {
                 ...state,
                 todoLists: [...newTodoList]
+            }
+
+        case EDITTODO:
+            const editTodo = state.todoLists.map(todo => (
+                todo.id === action.payload.id ?
+                    action.payload :
+                    todo
+            ))
+            return {
+                ...state,
+                todoLists: [...editTodo]
+            }
+
+        case DELETETODO:
+            const todoRemainings = state.todoLists.filter(todo => todo.id !== action.payload)
+            return {
+                state,
+                todoLists: [...todoRemainings]
             }
 
         default:
@@ -72,9 +94,29 @@ const toggleTodoThunk = id => {
     }
 }
 
+const editTodoThunk = todoUpdate => {
+    return async (dispatch) => {
+        const update = await axios.put(`http://localhost:9002/todoLists/${todoUpdate.id}`, {
+            ...todoUpdate,
+            name: todoUpdate.name
+        })
+        const result = await update.data
+        dispatch(editTodo(result))
+    }
+}
+
+const deleteTodoThunk = id => {
+    return async (dispatch) => {
+        await axios.delete(`http://localhost:9002/todoLists/${id}`)
+        dispatch(deleteTodo(id))
+    }
+}
+
 export default todoListsSlice
 export {
     getAllTodosThunk,
     addTodoThunk,
     toggleTodoThunk,
+    editTodoThunk,
+    deleteTodoThunk
 }
